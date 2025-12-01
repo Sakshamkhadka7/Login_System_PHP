@@ -1,4 +1,4 @@
-      :magic_wand: 
+:magic_wand: 
 ## A web that is designed using PHP  
 
 :bulb:  **Features**
