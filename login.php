@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               header("Location:welcome.php"); 
         }else {
         $showError = "Invalid email or password";
-    }
+    } 
 
       }
 
@@ -81,6 +81,32 @@ if($showError){
 }
 }
 
+if($login){
+
+  echo "
+     <table>
+     <tr>
+      
+     <td>".$row['email']."</td>
+       <td>".$row['age']."</td>
+         <td>".$row['gender']."</td>
+
+     </tr>    
+ 
+
+     </table>
+  
+  
+  ";
+
+
+}
+
+
+
+
+
+
 ?>
 
 
@@ -103,6 +129,9 @@ if($showError){
     <input type="password" class="form-control" id="exampleInputPassword1" name="cpassword">
     <div id="emailHelp" class="form-text">Make Sure type your passowrd same </div>
   </div>
+  
+
+
   <button type="submit" class="btn btn-primary">Login </button>
 </form>
 </div>

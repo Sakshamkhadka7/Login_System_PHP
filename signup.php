@@ -9,6 +9,9 @@
       $email = $_POST['email'];
       $password = $_POST['password'];
       $cpassword = $_POST['cpassword'];
+      $age=$_POST['age'];
+      $gender=$_POST['gender'];
+
 
       // Check email exists
       $existsSql = "SELECT * FROM client WHERE email='$email'";
@@ -26,8 +29,8 @@
 
 
 
-              $sql = "INSERT INTO client (email, password, cpassword, dt) 
-                      VALUES ('$email', '$hash', '$hash', current_timestamp())";
+              $sql = "INSERT INTO client (email,age,gender,password,cpassword,dt) 
+                      VALUES ('$email','$age','$gender','$hash', '$hash', current_timestamp())";
 
               if(mysqli_query($conn, $sql)){
                   $showAlert = true;
@@ -94,6 +97,37 @@
             <input type="password" class="form-control" id="exampleInputPassword1" name="cpassword">
             <div id="emailHelp" class="form-text">Make Sure type your passowrd same </div>
           </div>
+
+
+           <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Age :</label>
+    <input type="number" class="form-control" id="exampleInputPassword1" name="age">
+    
+  </div>
+
+
+           <div class="mb-3">
+        <label class="form-label">Gender</label>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="gender" id="maleGender" value="male">
+            <label class="form-check-label" for="maleGender">
+                Male
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="gender" id="femaleGender" value="female">
+            <label class="form-check-label" for="femaleGender">
+                Female
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="gender" id="otherGender" value="other">
+            <label class="form-check-label" for="otherGender">
+                Other
+            </label>
+        </div>
+    </div>
+
           <button type="submit" class="btn btn-primary">Sign Up</button>
         </form>
         </div>
